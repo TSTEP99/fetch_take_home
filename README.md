@@ -23,6 +23,7 @@ Scaling: he example code uses a simple while loop to read messages from the SQS 
 Error handling: The example code doesn't include any error handling. In a production environment, you would need to handle errors and exceptions gracefully, such as retrying failed operations or logging error messages.
 Monitoring: The example code doesn't include any monitoring or logging. In a production environment, you would need to monitor the performance of the system and log any important events to help with troubleshooting and debugging.
 Security : The example code is only an example and doesn't include any security features. In a production environment, you would need to secure the data in transit and at rest.
+
 2.
 In addition to the answer above, a few other things I might add are test cases to ensure the code works in different scenarios, and possible retries to handle different exceptions and failures as well as more documentation to make the code more readable.
 
