@@ -17,6 +17,7 @@ python take_home.py
 ```
 
 Questions:
+
 1.
 Credentials: In the example code, I've used hardcoded credentials to access the SQS queue and the Postgres database. In a production environment, you should use a more secure way to store and manage these credentials.
 Scaling: he example code uses a simple while loop to read messages from the SQS queue. In a production environment, you would need to handle a much larger number of messages, so you would need to use a more scalable approach.
