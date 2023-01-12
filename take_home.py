@@ -8,6 +8,7 @@ def read():
     with open('temp.json', 'r') as file:
         # load the json data from the file
         data = json.load(file)
+
     body_string = data["Messages"][0]["Body"]
     body_data = json.loads(body_string)
     
@@ -17,7 +18,7 @@ def encrypt(data):
 
     IP_MAP= [4, 2, 8, 7, 1, 9, 0, 3, 5, 6]
     DEVICE_MAP = [1, 3, 4, 0, 6, 8, 2, 9, 7, 5]
-
+    print(data)
     ip = data["ip"]
     device_id = data["device_id"]
 
@@ -37,7 +38,7 @@ def encrypt(data):
             masked_device_id = masked_device_id + str(DEVICE_MAP[int(s)])
 
     masked_ip = masked_ip[9:]+masked_ip[3:9]+ masked_ip[:3]
-    print(masked_device_id[7:10],masked_device_id[3:7],masked_device_id[:3],masked_device_id[10])
+    #print(masked_device_id[7:10],masked_device_id[3:7],masked_device_id[:3],masked_device_id[10])
     masked_device_id = masked_device_id[7:10]+masked_device_id[3:7]+masked_device_id[:3]+masked_device_id[10]
 
     data["ip"] = masked_ip
@@ -63,8 +64,10 @@ def write(data):
     # conn.close()
 
 if __name__=="__main__":
-    data = read()
-    encrypt_data = encrypt(data)
-    write(encrypt_data)
-
+    while True:
+        data = read()
+        if "foo" in data:
+            break
+        encrypt_data = encrypt(data)
+        write(encrypt_data)
 
